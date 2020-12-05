@@ -1,0 +1,22 @@
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t khanhngo/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+    - docker run khanhngo/react-test npm test -- --coverage
+
+after_success:
+    - docker build -t khanhngo/multi-client ./client
+    - docker build -t khanhngo/multi-nginx ./nginx
+    - docker build -t khanhngo/multi-server ./server
+    - docker build -t khanhngo/multi-worker ./worker
+    #Login to the docker CLI
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+    #Take those images and push them to docker hub
+    - docker push khanhngo/multi-client
+    - docker push khanhngo/multi-nginx
+    - docker push khanhngo/multi-server
+    - docker push khanhngo/multi-worker
