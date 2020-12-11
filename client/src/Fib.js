@@ -11,6 +11,7 @@ class Fib extends Component {
   componentDidMount() {
     this.fetchValues();
     this.fetchIndexes();
+    axios.defaults.adapter = require('axios/lib/adapters/http');
   }
 
   async fetchValues() {
