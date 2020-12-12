@@ -3,22 +3,22 @@ services:
     - docker
 
 before_install:
-    - docker build -t khanhngo/react-test -f ./client/Dockerfile.dev ./client
+    - docker build -t longmaster/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-    - docker run khanhngo/react-test npm test -- --coverage
+    - docker run longmaster/react-test npm test -- --coverage
 
 after_success:
-    - docker build -t khanhngo/multi-client ./client
-    - docker build -t khanhngo/multi-nginx ./nginx
-    - docker build -t khanhngo/multi-server ./server
-    - docker build -t khanhngo/multi-worker ./worker
+    - docker build -t longmaster/multi-client ./client
+    - docker build -t longmaster/multi-nginx ./nginx
+    - docker build -t longmaster/multi-server ./server
+    - docker build -t longmaster/multi-worker ./worker
     #Login to the docker CLI
     - echo $DOCKER_ID 
     - docker login -u="$DOCKER_ID" -p="$DOCKER_PASSWORD"
     #Take those images and push them to docker hub
-    - docker push longmaster/khanhngo:khanhngo/multi-clien
-    - docker push longmaster/khanhngo:khanhngo/multi-client
-    - docker push longmaster/khanhngo:khanhngo/multi-nginx
-    - docker push longmaster/khanhngo:khanhngo/multi-server
-    - docker push longmaster/khanhngo:khanhngo/multi-worker
+    - docker push longmaster/khanhngo
+    - docker push longmaster/khanhngo
+    - docker push longmaster/khanhngo
+    - docker push longmaster/khanhngo
+    - docker push longmaster/khanhngo
