@@ -3,7 +3,7 @@
     "containerDefinitions": [
         {
             "name": "client",
-            "image": "",
+            "image": "longmaster/multi-client",
             "hostname": "client",
             "essential": true
         },

@@ -19,5 +19,5 @@ after_success:
     #Take those images and push them to docker hub
     - docker push longmaster/multi-client
     - docker push longmaster/multi-nginx
-    - docker push longmaster/multi-nginx
+    - docker push longmaster/multi-server
     - docker push longmaster/multi-worker
