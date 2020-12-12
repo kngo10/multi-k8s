@@ -17,8 +17,7 @@ after_success:
     - echo $DOCKER_ID 
     - docker login -u="$DOCKER_ID" -p="$DOCKER_PASSWORD"
     #Take those images and push them to docker hub
-    - docker push longmaster/khanhngo
-    - docker push longmaster/khanhngo
-    - docker push longmaster/khanhngo
-    - docker push longmaster/khanhngo
-    - docker push longmaster/khanhngo
+    - docker push longmaster/multi-client
+    - docker push longmaster/multi-nginx
+    - docker push longmaster/multi-nginx
+    - docker push longmaster/multi-worker
