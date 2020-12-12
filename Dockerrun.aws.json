@@ -1,0 +1,23 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "client",
+            "image": "",
+            "hostname": "client",
+            "essential": true
+        },
+        {
+            "name": "server",
+            "image": "",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "name": "worker",
+            "image": "",
+            "hostname": "worker",
+            "essential": false
+        }
+    ]
+}
