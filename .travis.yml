@@ -14,7 +14,7 @@ after_success:
     - docker build -t khanhngo/multi-server ./server
     - docker build -t khanhngo/multi-worker ./worker
     #Login to the docker CLI
-    - echo "$DOCKER_ID"  
+    - echo $DOCKER_ID 
     - docker login -u="$DOCKER_ID" -p="$DOCKER_PASSWORD"
     #Take those images and push them to docker hub
     - docker push khanhngo/multi-client
