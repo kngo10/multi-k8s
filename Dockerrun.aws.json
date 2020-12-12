@@ -18,6 +18,11 @@
             "image": "",
             "hostname": "worker",
             "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "",
+            "hostname": "nginx"
         }
     ]
 }
