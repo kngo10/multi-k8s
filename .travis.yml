@@ -15,9 +15,10 @@ after_success:
     - docker build -t khanhngo/multi-worker ./worker
     #Login to the docker CLI
     - echo $DOCKER_ID 
-    - docker login --username "longmaster"  --password "Titanpc16"
+    - docker login -u="$DOCKER_ID" -p="$DOCKER_PASSWORD"
     #Take those images and push them to docker hub
-    - docker push khanhngo/multi-client
-    - docker push khanhngo/multi-nginx
-    - docker push khanhngo/multi-server
-    - docker push khanhngo/multi-worker
+    - docker push longmaster/khanhngo:khanhngo/multi-clien
+    - docker push longmaster/khanhngo:khanhngo/multi-client
+    - docker push longmaster/khanhngo:khanhngo/multi-nginx
+    - docker push longmaster/khanhngo:khanhngo/multi-server
+    - docker push longmaster/khanhngo:khanhngo/multi-worker
