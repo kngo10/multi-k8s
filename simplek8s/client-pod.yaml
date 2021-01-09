@@ -7,6 +7,6 @@ metadata:
 spec:
     containers:
         - name: client
-          image: longmaster/multi-client
+          image: longmaster/multi-worker
           ports:
             - containerPort: 3000
